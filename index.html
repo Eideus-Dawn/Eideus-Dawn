@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eideus Dawn RPG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'eid-dark': '#0a0a12',
+              'eid-panel': '#13131f',
+              'eid-accent': '#2d2d45',
+              'id-glow': '#4ade80', // Green for Identity
+              'world-glow': '#facc15', // Yellow for World
+              'story-glow': '#f87171', // Red for Story
+            },
+            fontFamily: {
+              mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      body {
+        background-color: #050508;
+        color: #e2e8f0;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f0f16;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2d2d45;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #4b5563;
+      }
+      .glow-text-green {
+        text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+      }
+      .glow-box-green {
+        box-shadow: 0 0 15px rgba(74, 222, 128, 0.1);
+        border: 1px solid rgba(74, 222, 128, 0.3);
+      }
+       .glow-text-yellow {
+        text-shadow: 0 0 10px rgba(250, 204, 21, 0.5);
+      }
+      .glow-box-yellow {
+        box-shadow: 0 0 15px rgba(250, 204, 21, 0.1);
+         border: 1px solid rgba(250, 204, 21, 0.3);
+      }
+       .glow-text-red {
+        text-shadow: 0 0 10px rgba(248, 113, 113, 0.5);
+      }
+      .glow-box-red {
+        box-shadow: 0 0 15px rgba(248, 113, 113, 0.1);
+         border: 1px solid rgba(248, 113, 113, 0.3);
+      }
+    </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
