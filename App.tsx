@@ -18,6 +18,9 @@ const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
   
+  // FIX: Initialization Lock to prevent React Strict Mode from double-firing the start prompt
+  const initializationLock = useRef(false);
+
   // Rolling Context State
   const [contextStartIndex, setContextStartIndex] = useState(0);
   
@@ -43,7 +46,12 @@ const App: React.FC = () => {
   // Initial prompt trigger
   useEffect(() => {
     // Only auto-start if we have a key and haven't started (and no messages exist, meaning clean slate)
-    if (!hasStarted && !isLoading && apiKey && messages.length === 0) {
+    // FIX: added initializationLock.current check
+    if (!initializationLock.current && !hasStarted && !isLoading && apiKey && messages.length === 0) {
+       
+       // Lock immediately to prevent race conditions
+       initializationLock.current = true;
+
        // Small timeout to allow UI to mount
        const timer = setTimeout(() => {
           // Pass true to hide this prompt from the user's chat log
