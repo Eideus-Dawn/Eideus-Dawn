@@ -1,3 +1,4 @@
+// Eideus_Dawn/App.tsx
 
 import React, { useState, useEffect, useRef } from 'react';
 import { initialEngineState } from './utils/initialState';
@@ -589,7 +590,7 @@ const App: React.FC = () => {
         <div className={`
           border-r border-white/10 bg-black/95 backdrop-blur-sm md:bg-black/20 
           transition-all duration-300
-          md:relative md:w-[350px] md:block md:z-10
+          md:relative md:w-[400px] md:block md:z-10
           ${showMobileGraph ? 'absolute inset-0 right-16 z-30 flex flex-col' : 'hidden'}
         `}>
            {leftPanelView === 'graph' ? (
@@ -635,7 +636,7 @@ const App: React.FC = () => {
             absolute top-0 right-16 bottom-0 
             bg-eid-panel border-l border-white/10 z-50 
             shadow-2xl transform transition-transform duration-300 ease-in-out
-            w-[calc(100vw-4rem)] md:w-[420px]
+            w-[calc(100vw-4rem)] md:w-[600px]
             ${activePanel ? 'translate-x-0' : 'translate-x-full'}
           `}
         >

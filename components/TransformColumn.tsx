@@ -1,3 +1,4 @@
+// Eideus_Dawn/components/TransformColumn.tsx
 import React from 'react';
 import { Transform, Modifier, Slot } from '../types';
 
@@ -39,22 +40,22 @@ const TransformColumn: React.FC<TransformColumnProps> = ({ transform, colorTheme
         <h2 className={`text-xl font-bold uppercase tracking-widest ${getGlowText()}`}>
           {transform.name}
         </h2>
-        <p className="text-xs text-gray-500 uppercase">{transform.description}</p>
+        <p className="text-xs text-gray-400 uppercase">{transform.description}</p>
       </div>
 
       {/* Modifiers Container (The "3" in 1x3x7) */}
       <div className="flex-1 flex flex-col gap-4 overflow-y-auto pr-1">
         {transform.modifiers.map((mod, modIndex) => (
-          <div key={mod.id} className={`bg-eid-panel border ${getBorderColor()} rounded-lg p-3 relative`}>
+          <div key={mod.id} className={`bg-eid-panelAQ border ${getBorderColor()} rounded-lg p-3 relative`}>
              {/* Modifier Header */}
             <div className="flex justify-between items-center mb-2">
                <div className="flex items-center gap-2">
-                  <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-black border ${getBorderColor()} ${getGlowText()}`}>
+                  <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-blackHx border ${getBorderColor()} ${getGlowText()}`}>
                     {modIndex + 1}
                   </div>
                   <div>
                     <h3 className={`font-semibold text-sm ${getGlowText()}`}>{mod.name}</h3>
-                    <p className="text-[10px] text-gray-400 uppercase tracking-wider">{mod.type}</p>
+                    <p className="text-xs text-gray-400 uppercase tracking-wider">{mod.type}</p>
                   </div>
                </div>
                {mod.score !== undefined && (
@@ -65,7 +66,7 @@ const TransformColumn: React.FC<TransformColumnProps> = ({ transform, colorTheme
             </div>
 
             {/* Description */}
-            <p className="text-xs text-gray-500 mb-3 italic leading-tight">{mod.description}</p>
+            <p className="text-sm text-gray-400 mb-3 italic leading-tight">{mod.description}</p>
 
             {/* Slots (The "7" in 1x3x7) */}
             <div className="grid grid-cols-1 gap-1.5">
@@ -78,16 +79,16 @@ const TransformColumn: React.FC<TransformColumnProps> = ({ transform, colorTheme
                     ${slot.active ? `bg-white/5 border-l-2 ${getBorderColor()}` : 'opacity-40 hover:opacity-70'}
                   `}
                 >
-                  <div className="text-[9px] font-mono text-gray-600 w-3">{slotIndex + 1}</div>
+                  <div className="text-xs font-mono text-gray-500 w-4">{slotIndex + 1}</div>
                   <div className="flex-1 overflow-hidden">
-                    <div className={`text-xs font-medium truncate ${slot.active ? 'text-gray-200' : 'text-gray-600'}`}>
+                    <div className={`text-sm font-medium truncate ${slot.active ? 'text-gray-200' : 'text-gray-500'}`}>
                       {slot.name}
                     </div>
                   </div>
                   
                   {/* Tooltip for Slot Description */}
                   {slot.active && (
-                    <div className="absolute z-50 left-0 bottom-full mb-1 hidden group-hover:block w-full bg-black border border-gray-700 p-2 text-xs text-gray-300 rounded shadow-xl pointer-events-none">
+                    <div className="absolute z-50 left-0 bottom-full mb-1 hidden group-hover:block w-full bg-black border border-gray-700 p-2 text-sm text-gray-300 rounded shadow-xl pointer-events-none">
                        {slot.description}
                     </div>
                   )}
